@@ -1,11 +1,11 @@
 body{
     background-color: gray;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     gap: 15px;
-    
 }
 
 #divBox {
@@ -13,6 +13,7 @@ body{
     height: 700px;
     background-color: white;
     border-radius: 36px;
+    position: relative;
 }
 
 button {
@@ -25,5 +26,44 @@ button {
     transition: 1s;
     border: 3px solid rgb(50, 195, 205);
     font-weight: bold;
+}
+
+#box2{
+    width: 300px;
+    height: 300px;
+    background-color: greenyellow;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+section{
+    border: 2px solid rgb(0, 204, 255);
+    height: 300px;
+    width: 180px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(104, 104, 236);
+    border-radius: 15px;
+    box-shadow: rgb(93 24 220) 0px 10px 39px 0px;
+
+}
+img {
+    width: 180px;
+    border-radius: 10px;
+    border: 2px solid blue;
+}
+h1 {
+    font-size: 16px;
+}
+
+p{
+    font-size: 12px;
 }
 
