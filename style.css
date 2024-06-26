@@ -6,11 +6,15 @@
 }
 
 body{
-    background-color: gray;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url(https://programaspasoapaso.wordpress.com/wp-content/uploads/2011/11/ablue.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #containBox {
@@ -33,7 +37,7 @@ body{
     align-items: center;
     justify-content: center;
     gap: 20px;
-    margin: 30px;
+    margin: 20px;
 }
 
 button {
@@ -107,5 +111,13 @@ h1 {
 p{
     font-size: 12px;
     font-weight: bold;
+}
+
+#cardsContain{
+    display: grid;
+    grid-template-columns: repeat(4, 25%); 
+    gap: 30px;
+    margin: 20px;
+
 }
 
