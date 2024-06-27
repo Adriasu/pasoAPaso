@@ -1,12 +1,12 @@
 import { datajunkFood } from "./data.js";
 
-const button = document.getElementsByTagName("button");
+const button = document.getElementById("btnShowHide");
 const divGreen = document.getElementById("box2");
 
-button[0].addEventListener("click", () => {
+button.addEventListener("click", () => {
   divGreen.style.visibility === "visible"
-    ? (divGreen.style.visibility = "hidden")
-    : (divGreen.style.visibility = "visible");
+    ? (divGreen.style.visibility = "hidden" ) 
+    : (divGreen.style.visibility = "visible" )
 });
 
 const cardsContain = document.getElementById("cardsContain");
@@ -94,27 +94,3 @@ datajunkFood.forEach((food) => {
   });
 });
 
-// selectedProducts.forEach((newProduct) => {
-//   const card = document.createElement("section");
-//   const containImg = document.createElement("div");
-//   const img = document.createElement("img");
-//   const textContain = document.createElement("div");
-//   const textName = document.createElement("h1");
-//   const textPrice = document.createElement("p");
-//   const buttonCard = document.createElement("img");
-
-//   boxConteinSelectedProducts.appendChild(card)
-//   card.appendChild(containImg);
-//   containImg.appendChild(img);
-//   card.appendChild(textContain);
-//   textContain.appendChild(textName);
-//   textContain.appendChild(textPrice);
-//   card.appendChild(buttonCard);
-
-//   img.src = newProduct.img;
-//   textName.innerHTML = newProduct.productName;
-//   textPrice.innerHTML = `${newProduct.price} €`;
-//   buttonCard.src = "https://img.icons8.com/?size=24&id=BsNkc7jnuBPU&format=png"
-// })
-
-//https://img.icons8.com/?size=24&id=BsNkc7jnuBPU&format=png
