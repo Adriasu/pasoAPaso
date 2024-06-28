@@ -54,32 +54,62 @@ datajunkFood.forEach((food) => {
 
   buttonCard.addEventListener("click", () => {
     divConteinArraySelectedProducts.innerHTML = "";
+    const result = {
+      img: food.img,
+      productName: food.productName,
+      price: food.price,
+      id: food.id,
+      count: 1
+    };
+
     const productCount = selectedProducts.reduce((acc, product) => {
-      acc[product.id] = acc[product.id] || {
-        count: 0,
-        img: product.img,
-        productName: product.productName,
-        price: product.price,
-      };
-      acc[product.id].count++
-    }, {});
+      if (product.id === result.id) {
+        product.count++
+        return true
+      }
+    }, false)
 
     console.log(productCount);
 
-    // const result = {
-    //   img: food.img,
-    //   productName: food.productName,
-    //   price: food.price,
-    //   id: food.id,
-    // };
-    selectedProducts.push(productCount);
+    if (!productCount) {
+      selectedProducts.push(result);
+    }
+
+    selectedProducts.push(result);
+
+    // const resultArray = [result];
 
     // const productCount = selectedProducts.reduce((acc, product) => {
-    //   acc[product.id] = (acc[product.id] || 0) + 1;
+    //   acc[product.id] = (acc[product.id] || 1) + 1;
     //   return acc;
     // }, {});
 
     // console.log(productCount);
+
+    // const resultProductCount = Object.keys(productCount).map((id) => ({
+    //   id,
+    //   count: productCount[id],
+    // }));
+
+    // console.log(resultProductCount);
+
+    // // if (resultProductCount.length() === 0) {
+    // //   selectedProducts.push(result);
+    // // }
+    // if (
+    //   resultArray[0].id ===
+    //   resultProductCount.forEach((product) => {
+    //     product.id;
+    //   })
+    // ) {
+    //   console.log("son iguales");
+    // } else {
+    //   selectedProducts.push(result);
+    // }
+
+    // //selectedProducts.push(result);
+
+    // console.log(selectedProducts);
 
     selectedProducts.forEach((newProduct) => {
       const card = document.createElement("section");
@@ -113,6 +143,7 @@ datajunkFood.forEach((food) => {
       textPrice.innerHTML = `${newProduct.price} €`;
       buttonCard.src =
         "https://img.icons8.com/?size=24&id=BsNkc7jnuBPU&format=png";
+      counter.innerHTML = "1";
 
       buttonCard.addEventListener("click", (event) => {
         event.target.parentElement.parentElement.remove();
