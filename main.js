@@ -67,49 +67,12 @@ datajunkFood.forEach((food) => {
         product.count++
         return true
       }
+      return acc
     }, false)
-
-    console.log(productCount);
 
     if (!productCount) {
       selectedProducts.push(result);
     }
-
-    selectedProducts.push(result);
-
-    // const resultArray = [result];
-
-    // const productCount = selectedProducts.reduce((acc, product) => {
-    //   acc[product.id] = (acc[product.id] || 1) + 1;
-    //   return acc;
-    // }, {});
-
-    // console.log(productCount);
-
-    // const resultProductCount = Object.keys(productCount).map((id) => ({
-    //   id,
-    //   count: productCount[id],
-    // }));
-
-    // console.log(resultProductCount);
-
-    // // if (resultProductCount.length() === 0) {
-    // //   selectedProducts.push(result);
-    // // }
-    // if (
-    //   resultArray[0].id ===
-    //   resultProductCount.forEach((product) => {
-    //     product.id;
-    //   })
-    // ) {
-    //   console.log("son iguales");
-    // } else {
-    //   selectedProducts.push(result);
-    // }
-
-    // //selectedProducts.push(result);
-
-    // console.log(selectedProducts);
 
     selectedProducts.forEach((newProduct) => {
       const card = document.createElement("section");
@@ -143,7 +106,7 @@ datajunkFood.forEach((food) => {
       textPrice.innerHTML = `${newProduct.price} €`;
       buttonCard.src =
         "https://img.icons8.com/?size=24&id=BsNkc7jnuBPU&format=png";
-      counter.innerHTML = "1";
+      counter.innerHTML = newProduct.count
 
       buttonCard.addEventListener("click", (event) => {
         event.target.parentElement.parentElement.remove();
