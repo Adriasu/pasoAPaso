@@ -59,16 +59,16 @@ datajunkFood.forEach((food) => {
       productName: food.productName,
       price: food.price,
       id: food.id,
-      count: 1
+      count: 1,
     };
 
     const productCount = selectedProducts.reduce((acc, product) => {
       if (product.id === result.id) {
-        product.count++
-        return true
+        product.count++;
+        return true;
       }
-      return acc
-    }, false)
+      return acc;
+    }, false);
 
     if (!productCount) {
       selectedProducts.push(result);
@@ -106,10 +106,16 @@ datajunkFood.forEach((food) => {
       textPrice.innerHTML = `${newProduct.price} €`;
       buttonCard.src =
         "https://img.icons8.com/?size=24&id=BsNkc7jnuBPU&format=png";
-      counter.innerHTML = newProduct.count
+      counter.innerHTML = newProduct.count;
 
       buttonCard.addEventListener("click", (event) => {
         event.target.parentElement.parentElement.remove();
+        const idProductDelete = newProduct.id;
+
+        const deleteProduct = selectedProducts.findIndex((product) => {
+          return product.id === idProductDelete;
+        });
+        selectedProducts.splice(deleteProduct, 1);
       });
     });
   });
